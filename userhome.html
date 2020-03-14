@@ -18,7 +18,7 @@
 <meta content="telephone=no" name="format-detection">
 <meta content="black" name="apple-mobile-web-app-status-bar-style">
 <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1;user-scalable=no;">
-<title>会员中心</title>
+<title>个人中心</title>
 <script type="text/javascript">
 $(document).ready(function(){
 	var attr = parseInt($(".member_m_pic_1").height());
@@ -47,7 +47,7 @@ function handleUserPic(){
 <div class="maincontainer">
 <div class="container" style="max-width:768px;margin:0 auto;">
 	<div class="row">
-	<a href="/p/userInfo">
+	<a href="address.html">
 		<div class="member_top member_top_1">
 			<div class="member_top_bg"><img  src="images/member_bg.png"></div>
 			<div class="member_m_pic member_m_pic_1">
@@ -56,10 +56,10 @@ function handleUserPic(){
 			<div  class="member_m_z member_m_z_1">
 				<div class="member_m_x">萧雅哲</div>
 				</div>
-			<div class="member_m_r">账户管理、收货地址&gt;
+			<div style="font-size: 14px;" class="member_m_r">收货地址&gt;
 			</div>
 		</div></a>
-		<div class="member_mp_img" data-toggle="modal" data-target="#myModalmin" data-title="我的名片" data-tpl="mp"><img src="images/member_mp_img.png"></div>
+		<!-- <div class="member_mp_img" data-toggle="modal" data-target="#myModalmin" data-title="我的名片" data-tpl="mp"><img src="images/member_mp_img.png"></div> -->
 		<div class="list-group mb10">
 			<a href="/p/userOrder" class="list-group-item tip">
 				<div class="list_group_img">
@@ -69,33 +69,33 @@ function handleUserPic(){
 			</a>
 			<div class="list-group-item p0 clearfix">
 				<div class="col-xs-3 p0">
-					<a class="order_tab_link" href="/p/userOrder?state_type=1">
+					<a class="order_tab_link" href="all_order.html">
 						<em class="order_img">
-						<img src="images/order_bg_3.png"></em>待付款
+						<img src="images/order_bg_3.png"></em>全部
 						
 						</a>
 				</div>
 				<div class="col-xs-3 p0">
-					<a class="order_tab_link" href="/p/userOrder?state_type=2">
+					<a class="order_tab_link" href="my_order.html">
 						<em class="order_img">
-						<img src="images/order_bg_2.png"></em>待发货
+						<img src="images/order_bg_2.png"></em>待付款
 						</a>
 				</div>
 				<div class="col-xs-3 p0">
-					<a class="order_tab_link" href="/p/userOrder?state_type=3">
+					<a class="order_tab_link" href="payd_ordor.html">
 						<em class="order_img">
-						<img src="images/order_bg_1.png"></em>待收货
+						<img src="images/order_bg_1.png"></em>已付款
 						</a>
 				</div>
 				<div class="col-xs-3 p0">
-					<a class="order_tab_link" href="/p/userOrder?state_type=4">
+					<a class="order_tab_link" href="over_order.html">
 						<em class="order_img">
-						<img src="images/order_bg.png"></em>已完成
+						<img src="images/order_bg.png"></em>已收货
 						</a>
 				</div>
 			</div>
 		</div>
-		<div class="list-group mb10 member_list_group clearfix">
+		<!-- <div class="list-group mb10 member_list_group clearfix">
 			<a href="/p/collect" class="list-group-item col-xs-4">
 				<div class="m_img"><img src="images/order_bg_5.png"></div>
 				<p class="m_name">我的收藏</p>
@@ -118,9 +118,9 @@ function handleUserPic(){
 				<span class="red">&nbsp;&nbsp;</span>
 			</a>
 			
-		</div>
+		</div> -->
 				
-		<div class="list-group mb10">
+		<!-- <div class="list-group mb10">
 			<a href="/p/help" class="list-group-item tip">
 				<div class="list_group_img"><img src="images/order_bg_10.png"></div>
 				常见问题
@@ -129,7 +129,7 @@ function handleUserPic(){
 				<div class="list_group_img"><img src="images/order_bg_9.png"></div>
 				意见反馈
 			</a>
-		</div>
+		</div> -->
 		
 	</div>
 </div>
@@ -165,14 +165,14 @@ function handleUserPic(){
 			<i class="navIcon home"></i>
 			<span class="text">首页</span>
 		</a>
-		<a href="category.html">
+		<!-- <a href="category.html">
 			<i class="navIcon sort"></i>
 			<span class="text">分类</span>
 		</a>
 		<a href="shopcart.html">
 			<i class="navIcon shop"></i>
 			<span class="text">购物车</span>		
-		</a>
+		</a> -->
 		<a href="userhome.html" class="active">
 			<i class="navIcon member"></i>
 			<span class="text">我的</span>
@@ -181,5 +181,25 @@ function handleUserPic(){
   </div>
 </footer>
 </div>
+<script src="js/jquery.min.js"></script>
+<script>
+
+	$.ajax({
+		url:'https://mask.zhixiutec.com/api/user',
+		success:function(res){
+			console.log('res',res)
+			var data =res.data;
+			if(res && res.error_code === 0){
+				$('.img-circle').attr('src',data.avatar)
+				$('.member_m_x').text(data.user_name)
+				$('.member_m_r').on('click',function(){
+					window.open('address.html','_self')
+				})
+			}else{
+				window.open(res.data)
+			}
+		}
+	})
+</script>
 </body>
 </html>

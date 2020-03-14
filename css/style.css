@@ -87,7 +87,7 @@ h1, h2, h3{font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif;}
 .foot-con_2{margin:0 auto;max-width:768px;background:#fff;height: 50px;border-top:1px solid #ccc;}
 .foot-con_2 a:active{color:#666;}
 .foot-con_2 a:visited{color:#666;}
-.foot-con a{display: block; width:25%; float:left; text-align:center; font-size: 12px; position:relative;}
+.foot-con a{display: block; width:50%; float:left; text-align:center; font-size: 12px; position:relative;}
 .foot-con .navIcon{width: 28px; height: 28px; margin-top:3px; display: inline-block; background:url(../images/icon.png) no-repeat; background-size: 280px 90px;}
 .foot-con .badge{background-color: #f15353; position: absolute;right:50%; margin-right:-32px; top: 2px;}
 .foot-con .text{display:block; line-height: 1; margin-top: -3px;}

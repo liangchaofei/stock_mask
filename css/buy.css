@@ -1,0 +1,76 @@
+.ps_style {
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    background: #fff;
+}
+.ps_left {
+    float: left;
+    padding-left: 0.416666rem;
+    color: #000;
+}
+.ps_right {
+    float: right;
+    margin-right: 0.722222rem;
+    color: #000;
+}
+
+
+.l_message {
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    background-color: #fff;
+    float: left;
+}
+.l_left {
+    float: left;
+    padding-left: 0.416666rem;
+    color: #000;
+    text-align: left;
+}
+.l_right {
+    width: 76.666666%;
+    height: 4rem;
+    line-height: 4rem;
+    float: right;
+    border: 0;
+    outline: 0;
+    resize: none;
+    color: #979797;
+    padding: 0.138888rem;
+    padding-left: 0;
+}
+
+
+#address{
+    width: 100%;
+    padding-left: 4px;
+    float: left;
+    height: 95%;
+    background-color: #fff;
+}
+
+
+.inputDiv{
+    background: #fff;
+    border-bottom: 1px sloid #eee;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-left: 10px;
+}
+.inputDiv:empty::before{
+    color:lightgrey;
+    content:attr(placeholder);
+}
+
+.rightarrow{
+    display: inline-block;
+    float: right;
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    right: 7px;
+    text-align: right;
+
+}
