@@ -15,16 +15,13 @@
 
 <body>
     <div class="wrap">
-        <!-- <div class="head">
+        <div class="head" style="background: url(images/top_bg.png) no-repeat center;background-size: 100% 100%;">
 				<div class="back">
 					<img src="images/wback.png" alt="" />
 				</div>
 				<p class="sure">我的订单</p>
-				<div class="message">
-					<img src="images/message.png" alt="" />
-				</div>
-			</div> -->
-        <header class="header">
+			</div>
+        <header class="header" style="margin-top: 1.4rem;">
             <ul class='header_ul'>
                 <li class='active'>全部</li>
                 <li><a style="color: #000;" href="my_order.html">待付款</a></li>
@@ -35,11 +32,11 @@
         <div id="order_box">
         </div>
         <!--当没有商品时显示的样式-->
-        <!--<div class="no_goods">
-				<img src="../image/noGoods.png" alt="" />
+        <div class="no_goods" style="display: none;">
+				<img src="images/noGoods.png" alt="" />
 				<p>您还没有相关订单！</p>
-				<button class="stroll_btn">去逛逛</button>
-			</div>-->
+				<button class="stroll_btn" style="font-size: 0.4rem;">去逛逛</button>
+			</div>
         <!--当没有商品时显示的样式-->
       
 
@@ -51,6 +48,9 @@
 <script src="js/order.js"></script>
 <script src="js/jwerixin.js"></script>
 <script>
+    $('.back').on('click',function(){
+        window.history.go(-1)
+    })
     $.ajax({
         url: "https://mask.zhixiutec.com/api/user",
         success: function (res) {
@@ -77,7 +77,7 @@
                     <div class="mg_title clearfix">
                         <p class="mg_h">现货&nbsp;瑞典进口&nbsp;ICA50%&nbsp;水果坚果燕麦片即食免煮&nbsp;冲饮早餐代餐</p>
                         <div class="mg_score">
-                            <p class="mg_money">￥${data[i].spend}</p>
+                            <p class="mg_money">￥${data[i].spend/100}</p>
                         </div>
                         <div class='mg_sub clearfix'>
                             <p class="sub_title">50%&nbsp;水果坚果&nbsp;750g</p>
@@ -106,7 +106,7 @@
                             if(data.length>0){
                                 $('#order_box').append(str)
                             }else{
-                                $('#order_box').append('<p style="margin-top:40">暂无订单</p>')
+                                $('.no_goods').css("display",'block')
                             }
 
                             $('.del').on('click',function(){

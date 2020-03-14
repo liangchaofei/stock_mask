@@ -140,9 +140,10 @@ body {
 	height: 1.027777rem;
 	line-height: 1.027777rem;
 	border-bottom: 1px solid #e4e4e4;
-	padding-right: 0.416666rem;
-	text-align: right;
-	font-size: 0.361111rem;
+	padding-left: 0.416666rem;
+	text-align: left;
+    font-size: 0.361111rem;
+    color: #666;
 }
 .wait_pay {
 	width: 100%;
