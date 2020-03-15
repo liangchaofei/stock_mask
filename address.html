@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-03-14 18:04:15
- * @LastEditTime: 2020-03-15 11:16:30
+ * @LastEditTime: 2020-03-15 14:23:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mask_shop/static/address.html
@@ -16,6 +16,25 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
     <link rel="stylesheet" href="css/address.css" />
 <script src="js/pc.js"></script>
+<style>
+    #toast
+{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+margin-top:-20px;
+margin-left:-105px;
+width:300px;
+height:70px;
+border-radius:10px;
+background:#353535;
+text-align:center;
+font-size:0.4rem;
+line-height:70px;
+color:#fff;
+}
+</style>
 </head>
 
 <body style="padding:0">
@@ -69,7 +88,7 @@
     </div>
 
 
-
+    <div id="toast"></div>
 
 
 </body>
@@ -106,6 +125,9 @@
                         success: function (res) {
                             if (res && res.error_code === 0) {
                                 window.open('my_order.html', '_self')
+                            }else{
+                                $("#toast").text(res.err_msg);
+                                $("#toast").fadeIn().delay(1000).fadeOut();
                             }
                         }
                     })
