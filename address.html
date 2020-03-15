@@ -1,86 +1,111 @@
 <!--
  * @Author: your name
  * @Date: 2020-03-14 18:04:15
- * @LastEditTime: 2020-03-14 23:28:22
+ * @LastEditTime: 2020-03-15 11:16:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mask_shop/static/address.html
  -->
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
-        <title>添加收货地址</title>
-        <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
-        <link rel="stylesheet" href="css/address.css"/>
-    
-	</head>
-    <body style="padding:0">
-        <div class="head" style="background: url(images/top_bg.png) no-repeat center;background-size: 100% 100%;">
-            <div class="back">
-                <img src="images/wback.png" alt="" />
-            </div>
-            <p class="sure">添加收货地址</p>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
+    <title>添加收货地址</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+    <link rel="stylesheet" href="css/address.css" />
+<script src="js/pc.js"></script>
+</head>
+
+<body style="padding:0">
+    <div class="head" style="background: url(images/top_bg.png) no-repeat center;background-size: 100% 100%;">
+        <div class="back">
+            <img src="images/wback.png" alt="" />
         </div>
-		<form action="" id="forget">
-			
-			<div class="content" style="margin-top: 1.5rem;">
-				<ul>
-					<li style="display: flex;">
-                        <svg style="margin-top: 25;" t="1584199297954" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4815" width="48" height="48"><path d="M677.3 930.5h-332c-52.3 0-94.8-42.5-94.8-94.8V222.9c0-52.3 42.5-94.8 94.8-94.8h332c52.3 0 94.8 42.5 94.8 94.8v612.8c0 52.3-42.5 94.8-94.8 94.8z m-332-762.3c-30.1 0-54.7 24.5-54.7 54.7v612.8c0 30.1 24.5 54.7 54.7 54.7h332c30.1 0 54.7-24.5 54.7-54.7V222.9c0-30.1-24.5-54.7-54.7-54.7h-332z" fill="#231815" p-id="4816"></path><path d="M752 729.9H270.6c-11.1 0-20.1-9-20.1-20.1s9-20.1 20.1-20.1H752c11.1 0 20.1 9 20.1 20.1s-9 20.1-20.1 20.1zM511.3 850.2c-22.1 0-40.1-18-40.1-40.1s18-40.1 40.1-40.1 40.1 18 40.1 40.1-18 40.1-40.1 40.1z m0-40.1h20.1-20.1z" fill="#231815" p-id="4817"></path></svg>
-						<input type="text" name="" id="phone" value="" placeholder="请输入手机号"/>
-					</li>
-					<li class="verify" style="display: flex;">
-                        <svg style="margin-top: 25;" t="1584199433446" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5706" width="48" height="48"><path d="M676.155199 367.576703c0-81.740676-66.580394-147.997706-148.71095-147.997706-82.129532 0-148.705833 66.258053-148.705833 147.997706 0 81.736583 66.575278 147.992589 148.705833 147.992589C609.573781 515.568269 676.155199 449.313286 676.155199 367.576703L676.155199 367.576703zM411.779949 367.576703c0-63.563688 51.782364-115.110691 115.6643-115.110691 63.880913 0 115.663276 51.548026 115.663276 115.110691 0 63.570851-51.783387 115.103528-115.663276 115.103528C463.561289 482.680231 411.779949 431.147554 411.779949 367.576703L411.779949 367.576703zM791.820522 367.576703c0-145.30027-118.357642-263.104303-264.376273-263.104303-146.020678 0-264.377296 117.804033-264.377296 263.104303 0 145.292084 264.377296 460.423321 264.377296 460.423321S791.820522 512.868787 791.820522 367.576703L791.820522 367.576703zM527.443225 137.353274c127.753639 0 231.334739 103.068424 231.334739 230.222405 0 127.149888-231.334739 411.098939-231.334739 411.098939S296.11565 494.718405 296.11565 367.576703C296.11565 240.421698 399.695726 137.353274 527.443225 137.353274L527.443225 137.353274zM644.311956 722.598462c-7.234775 9.878998-14.298658 19.358907-21.084201 28.352745 70.555939 8.087189 119.024837 24.831548 119.024837 44.162826 0 27.237341-96.176456 49.331545-214.810391 49.331545-118.633934 0-214.802204-22.094204-214.802204-49.331545 0-19.333324 48.460712-36.075637 119.014604-44.162826-6.78452-8.993838-13.845333-18.473747-21.076014-28.352745-77.959559 13.847379-130.98831 41.12463-130.98831 72.516594 0 45.416376 110.967324 82.21856 247.851924 82.21856 136.883577 0 247.851924-36.802184 247.851924-82.21856 0-31.392988-53.029774-58.669214-130.987287-72.516594L644.311956 722.598462z" p-id="5707"></path></svg>
-						<input type="text" name="" id="address" value="" placeholder="请输入收货地址"/>
-					</li>
-				</ul>
-				<div class="registerBtn" style="background-color: cornflowerblue;">
-		    		<p class="mainBtnInvalid" style="color: #fff;">确定</p>
-				</div>		
-			</div>	
-			<div id="mask" class="mask"></div> 
-		</form>
-		 <div class="shade">
-        	<p></p>
-           </div>	
-           
-           
+        <p class="sure">添加收货地址</p>
+    </div>
+    <form action="" id="forget">
+
+        <div class="content" style="margin-top: 1.5rem;">
+            <ul>
+                <li style="display: flex;">
+                    <svg style="margin-top: 25;" t="1584241567326" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2159" width="32" height="32"><path d="M665.6 656.564706C771.011765 602.352941 843.294118 487.905882 843.294118 361.411765 843.294118 177.694118 695.717647 27.105882 512 27.105882S180.705882 174.682353 180.705882 358.4c0 126.494118 72.282353 243.952941 177.694118 298.164706C183.717647 707.764706 60.235294 852.329412 60.235294 1002.917647h60.235294c0-180.705882 174.682353-301.176471 391.529412-301.176471s391.529412 120.470588 391.529412 301.176471h60.235294c0-150.588235-123.482353-295.152941-298.164706-346.352941zM240.941176 358.4c0-150.588235 120.470588-271.058824 271.058824-271.058824s271.058824 120.470588 271.058824 271.058824-120.470588 271.058824-271.058824 271.058824-271.058824-123.482353-271.058824-271.058824z" fill="#2c2c2c" p-id="2160"></path></svg>
+                    <input type="text" name="" id="username" value="" placeholder="请输入姓名" />
+                </li>
+                <li style="display: flex;">
+                    <svg style="margin-top: 25;" t="1584199297954" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="4815" width="48" height="48">
+                        <path
+                            d="M677.3 930.5h-332c-52.3 0-94.8-42.5-94.8-94.8V222.9c0-52.3 42.5-94.8 94.8-94.8h332c52.3 0 94.8 42.5 94.8 94.8v612.8c0 52.3-42.5 94.8-94.8 94.8z m-332-762.3c-30.1 0-54.7 24.5-54.7 54.7v612.8c0 30.1 24.5 54.7 54.7 54.7h332c30.1 0 54.7-24.5 54.7-54.7V222.9c0-30.1-24.5-54.7-54.7-54.7h-332z"
+                            fill="#231815" p-id="4816"></path>
+                        <path
+                            d="M752 729.9H270.6c-11.1 0-20.1-9-20.1-20.1s9-20.1 20.1-20.1H752c11.1 0 20.1 9 20.1 20.1s-9 20.1-20.1 20.1zM511.3 850.2c-22.1 0-40.1-18-40.1-40.1s18-40.1 40.1-40.1 40.1 18 40.1 40.1-18 40.1-40.1 40.1z m0-40.1h20.1-20.1z"
+                            fill="#231815" p-id="4817"></path>
+                    </svg>
+                    <input type="text" name="" id="phone" value="" placeholder="请输入手机号" />
+                </li>
+                <li class="verify" style="display: flex;">
+                    <svg style="margin-top: 25;" t="1584199433446" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="5706" width="48" height="48">
+                        <path
+                            d="M676.155199 367.576703c0-81.740676-66.580394-147.997706-148.71095-147.997706-82.129532 0-148.705833 66.258053-148.705833 147.997706 0 81.736583 66.575278 147.992589 148.705833 147.992589C609.573781 515.568269 676.155199 449.313286 676.155199 367.576703L676.155199 367.576703zM411.779949 367.576703c0-63.563688 51.782364-115.110691 115.6643-115.110691 63.880913 0 115.663276 51.548026 115.663276 115.110691 0 63.570851-51.783387 115.103528-115.663276 115.103528C463.561289 482.680231 411.779949 431.147554 411.779949 367.576703L411.779949 367.576703zM791.820522 367.576703c0-145.30027-118.357642-263.104303-264.376273-263.104303-146.020678 0-264.377296 117.804033-264.377296 263.104303 0 145.292084 264.377296 460.423321 264.377296 460.423321S791.820522 512.868787 791.820522 367.576703L791.820522 367.576703zM527.443225 137.353274c127.753639 0 231.334739 103.068424 231.334739 230.222405 0 127.149888-231.334739 411.098939-231.334739 411.098939S296.11565 494.718405 296.11565 367.576703C296.11565 240.421698 399.695726 137.353274 527.443225 137.353274L527.443225 137.353274zM644.311956 722.598462c-7.234775 9.878998-14.298658 19.358907-21.084201 28.352745 70.555939 8.087189 119.024837 24.831548 119.024837 44.162826 0 27.237341-96.176456 49.331545-214.810391 49.331545-118.633934 0-214.802204-22.094204-214.802204-49.331545 0-19.333324 48.460712-36.075637 119.014604-44.162826-6.78452-8.993838-13.845333-18.473747-21.076014-28.352745-77.959559 13.847379-130.98831 41.12463-130.98831 72.516594 0 45.416376 110.967324 82.21856 247.851924 82.21856 136.883577 0 247.851924-36.802184 247.851924-82.21856 0-31.392988-53.029774-58.669214-130.987287-72.516594L644.311956 722.598462z"
+                            p-id="5707"></path>
+                    </svg>
+                    <input type="text" name="" id="address" value="" placeholder="请输入收货地址" />
+                </li>
+            </ul>
+            <div class="registerBtn" style="background-color: cornflowerblue;">
+                <p class="mainBtnInvalid" style="color: #fff;">确定</p>
+            </div>
+        </div>
+        <div>
+            <p style="margin-top: 1rem;margin-left: 0.5rem;color:#aaa">温馨提示：请务必填写正确的信息以便邮寄更顺利的达到您的身边</p>
+        </div>
+        <div id="mask" class="mask"></div>
+    </form>
+    <div class="shade">
+        <p></p>
+    </div>
 
 
-        
-	</body>
+
+
+
+</body>
+
 </html>
 <script src="js/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
 <script src="js/order.js"></script>
 <script src="js/jquery.min.js"></script>
 <script>
-    $('.back').on('click',function(){
+    $('.back').on('click', function () {
         window.history.go(-1)
     })
     $.ajax({
-        url:'https://mask.zhixiutec.com/api/user',
-        success:function(res){
-            console.log('res',res)
-            if(res && res.error_code=== 2){
+        url: 'https://mask.zhixiutec.com/api/user',
+        success: function (res) {
+            if (res && res.error_code === 2) {
                 var url = res.data;
-                window.open(url,'_self')
-            }else{
-                var user_name = res && res.data && res.data.user_name;
-                $('.mainBtnInvalid').on('click',function(){
+                window.open(url, '_self')
+            } else {
+                var user = res && res.data;
+                $('#address').val(user.mail_address)
+                $('#phone').val(user.phone)
+                $('#username').val(user.nick_name ?user.nick_name:user.user_name)
+                $('.mainBtnInvalid').on('click', function () {
                     $.ajax({
-                        url:'https://mask.zhixiutec.com/api/user',
-                        type:'post',
-                        data:JSON.stringify({
-                            user_name,
-                            mail_address:$('#address').val(),
-                            phone:$('#phone').val()
+                        url: 'https://mask.zhixiutec.com/api/user',
+                        type: 'post',
+                        data: JSON.stringify({
+                            user_name: user.user_name,
+                            mail_address: $('#address').val(),
+                            phone: $('#phone').val()
                         }),
-                        success:function(res){
-                            if(res && res.error_code ===0){
-                                window.open('my_order.html','_self')
+                        success: function (res) {
+                            if (res && res.error_code === 0) {
+                                window.open('my_order.html', '_self')
                             }
                         }
                     })
@@ -88,5 +113,5 @@
             }
         }
     })
-    
+
 </script>
