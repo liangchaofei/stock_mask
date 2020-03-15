@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="css/style.css?v=1?v=01291">
 	<link rel="stylesheet" href="css/member.css?v=01291">
 	<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
 	<link rel="stylesheet" href="css/order3.css?v=01291">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
@@ -36,6 +36,164 @@
 			background: #ffe8e8 none repeat scroll 0 0;
 			border: 2px solid #be0106;
 			margin: -1px;
+		}
+
+		ul,
+		li,
+		header {
+			display: block;
+			margin: 0;
+			padding: 0;
+			border: 0
+		}
+
+		body {
+			color: #666;
+			min-width: 320px;
+			max-width: 750px;
+			margin: 0 auto;
+			cursor: default;
+			word-break: break-all;
+			white-space: normal;
+			-webkit-tap-highlight-color: transparent;
+			font-size: .24rem;
+			background-color: #f5f5f5
+		}
+
+		ul,
+		li {
+			list-style: none
+		}
+
+		a {
+			text-decoration: none
+		}
+
+		input,
+		input[type=button],
+		input[type=submit]锛宨nput[type=reset] {
+			-webkit-appearance: none
+		}
+
+		.favor-header-bar {
+			background-color: #4781fe;
+			padding: 0 1.1rem;
+			overflow: hidden;
+			height: 3.46rem;
+			line-height: 3.46rem;
+			border-bottom: 1px solid #e1e1e1
+		}
+
+		.favor-header-bar p {
+			text-align: center;
+			color: #fff;
+			font-size: 1rem;
+			line-height: 3.46rem;
+			height: 3.46rem;
+			margin: 0
+		}
+
+		.tabClick {
+			background: #fff;
+			overflow: hidden
+		}
+
+		.tabClick li {
+			height: 3rem;
+			line-height: 3rem;
+			width: 33.33%;
+			float: left;
+			text-align: center;
+			color: #999;
+			font-size: 0.7rem;
+		}
+
+		.tabClick li.active {
+			color: #4781fe;
+			transition: .1s;
+			font-weight: 700
+		}
+
+		.tabCon {
+			overflow: hidden;
+			background-color: #fff;
+		}
+
+		.tabBox {
+			position: relative
+		}
+
+		.tabList {
+			word-break: break-all;
+			width: 100%;
+			float: left
+		}
+
+		.lineBorder {
+			height: 2px;
+			overflow: hidden;
+			border-bottom: 1px solid #eee;
+			background: #f3f3f3
+		}
+
+		.lineDiv {
+			background: #4781fe;
+			height: 2px;
+			width: 33.33%
+		}
+
+		.statistics {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-end;
+			color: #666;
+			margin-top: 2rem
+		}
+
+		.statistics li {
+			width: 50%;
+			text-align: center
+		}
+
+		.statistics .statmoney {
+			width: 33.333%
+		}
+
+		.statistics .model {
+			height: 1.2rem;
+			line-height: 1.2rem;
+			color: #000;
+			font-size: .8rem
+		}
+
+		#chart2 {
+			margin-top: .8rem
+		}
+
+		.timeyear {
+			width: 3rem;
+			text-align: center;
+			border-radius: 1rem;
+			padding: .1rem .8rem;
+			font-size: .88rem;
+			color: #4781fe;
+			border: 1px solid #4781fe;
+			float: right
+		}
+
+		.tabList .shijian {
+			padding: .6rem 1rem 0;
+			height: 2rem
+		}
+
+		.tabList .shijian .biaoti {
+			display: block;
+			height: 2rem;
+			line-height: 2rem;
+			color: #000;
+			float: left
 		}
 	</style>
 </head>
@@ -73,13 +231,12 @@
 							style="width: 3840px; position: relative; overflow: hidden; padding: 0px; margin: 0px; transition-duration: 200ms; transform: translateX(-768px);">
 							<li style="display: table-cell; vertical-align: top; width: 768px;height: 375;">
 								<a target="_blank">
-									<img src="./images/kg1.png" alt="女包"
-									style="height: 375;"
+									<img src="./images/kg1.png" alt="女包" style="height: 375;"
 										ppsrc="./img/0da8eb94-0159-4700-a6a5-bc007da5a853.jpg">
 								</a>
 							</li>
 							<li style="display: table-cell; vertical-align: top; width: 768px;">
-								<a  target="_blank">
+								<a target="_blank">
 									<img src="./images/kg1.png" alt="女鞋"
 										ppsrc="./img/61647775-f5d0-4cfe-b84f-96060eb8e2e3.jpg">
 								</a>
@@ -96,29 +253,75 @@
 			</div>
 			<div class="row gary-bg" style="margin: 0;">
 				<div class="white-bg p10 details_con">
-					<h1 class="item-name" id="prodName">马斯克(一次性卫生口罩)批发零售, 大于1w只统一发货价1.7元/只,小于1w只统一发货价1.6元/只。厂家直销，假一赔十!</h1>
-				
+					<h1 class="item-name" id="prodName">马斯克(一次性卫生口罩)批发零售, 大于1w只统一发货价1.7元/只,小于1w只统一发货价1.6元/只。厂家直销，假一赔十!
+					</h1>
+
 					<ul>
 						<li>
 							<label>
 								<img style="width: 20px;" src="./images/pos.png" alt="">
-							发货：</label><span>北京</span></li>
-							<li>
-								<span class="ant-tag ant-tag-has-color" style="background-color: rgb(255, 85, 0);">惊爆价</span>
-								<span class="ant-tag ant-tag-has-color" style="background-color: rgb(255, 85, 0);">微信认证</span>
-								<span class="ant-tag ant-tag-has-color" style="background-color: rgb(255, 85, 0);">安全支付</span>
-							</li>
+								发货：</label><span>北京</span></li>
 						<li>
-							<label>规格1</label>
+							<span class="ant-tag ant-tag-has-color"
+								style="background-color: rgb(255, 85, 0);">惊爆价</span>
+							<span class="ant-tag ant-tag-has-color"
+								style="background-color: rgb(255, 85, 0);">微信认证</span>
+							<span class="ant-tag ant-tag-has-color"
+								style="background-color: rgb(255, 85, 0);">安全支付</span>
+						</li>
+						<li>
+							<label style="font-size: 0.6rem;">规格1</label>
 							<span class="price">¥<span class="price" id="prodCash">大于2w只发货价1.6元/只</span></span>
 						</li>
 						<li>
-							<label>规格2</label>
+							<label style="font-size: 0.6rem;">规格2</label>
 							<span class="price">¥<span class="price" id="prodCash">少于2w只发货价1.7元/只</span></span>
 						</li>
 					</ul>
 				</div>
-				<div id="goodsContent" class="goods-content white-bg">
+				<div class="wrap" id="wrap">
+					<ul class="tabClick">
+						<li class="active">图文详情</li>
+						<li>规格参数</li>
+						<li>企业资质</li>
+					</ul>
+					<div class="lineBorder">
+						<div class="lineDiv"></div>
+					</div>
+					<div class="tabCon">
+						<div class="tabBox">
+							<div class="tabList">
+								<div class="prop-area" style="min-height:300px;overflow: hidden;">
+									<img src="./images/kg1.png" alt="" /></div>
+							</div>
+							<div class="tabList">
+								<div class="desc-area" style="padding: 0px 10px 0 10px;">
+									<li style="padding: 0.2rem;">
+										<label style="font-size: 0.6rem;margin: 0 0.5rem;">规格1</label>
+										<span class="price">¥<span class="price" id="prodCash">大于2w只发货价1.6元/只</span></span>
+									</li>
+									<li>
+										<label style="font-size: 0.6rem;margin: 0 0.5rem;">规格2</label>
+										<span class="price">¥<span class="price" id="prodCash">少于2w只发货价1.7元/只</span></span>
+									</li>
+								</div>
+							</div>
+							<div class="tabList">
+								<div id="ajax_loading" style="margin: 10px  auto 15px;text-align:center;"> 
+									<p style="font-size: 18px;font-weight:bold;color: #000;">营业执照</p>
+									<img
+										src="images/zhizhao.png"
+										style="max-width: 100%; display: block;  margin: auto;">
+									</div>
+									<div style="margin-bottom: 10px;">
+										<a style="color: cornflowerblue;padding-left: 10px;font-size: 16px;" href="images/1_一次性使用口罩企业标准--pdf.pdf" target="_blank">一次性使用口罩企业标准</a>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div id="goodsContent" class="goods-content white-bg">
 
 					<div class="hd hd_fav">
 						<ul>
@@ -147,11 +350,6 @@
 										<label>规格2</label>
 										<span class="price">¥<span class="price" id="prodCash">少于2w只发货价1.7元/只</span></span>
 									</li>
-									<!-- <li style="height:30px;">
-										<div id="ajax_loading" style="margin: 10px  auto 15px;text-align:center;"> <img
-												src="images/loading.gif"
-												style="width: auto; display: block;  margin: auto;"></div>
-									</li> -->
 								</div>
 							</ul>
 							<ul style="display: table-cell; vertical-align: top; max-width: 768px;width: 100%;"
@@ -172,7 +370,7 @@
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
@@ -188,11 +386,11 @@
 				</a>
 				<div class="buy-btn-fix">
 					<!-- <a class="btn btn-info btn-cart" onclick="addShopCart();" href="javascript:void(0);">加入购物车</a> -->
-					<a href="shopcart.html" class="btn btn-danger btn-buy open-popup" data-target="open-popup" >立即购买</a>
+					<a href="shopcart.html" class="btn btn-danger btn-buy open-popup" data-target="open-popup">立即购买</a>
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="clear"></div>
 
 		<footer class="footer">
@@ -286,6 +484,139 @@
 		</script>
 		<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+		<script charset="utf-8">
+			window.onload = function () {
+				var windowWidth = document.body.clientWidth; //window 宽度;
+				var wrap = document.getElementById('wrap');
+				var tabClick = wrap.querySelectorAll('.tabClick')[0];
+				var tabLi = tabClick.getElementsByTagName('li');
+
+				var tabBox = wrap.querySelectorAll('.tabBox')[0];
+				var tabList = tabBox.querySelectorAll('.tabList');
+
+				var lineBorder = wrap.querySelectorAll('.lineBorder')[0];
+				var lineDiv = lineBorder.querySelectorAll('.lineDiv')[0];
+
+				var tar = 0;
+				var endX = 0;
+				var dist = 0;
+
+				tabBox.style.overflow = 'hidden';
+				tabBox.style.position = 'relative';
+				tabBox.style.width = windowWidth * tabList.length + "px";
+
+				for (var i = 0; i < tabLi.length; i++) {
+					tabList[i].style.width = windowWidth + "px";
+					tabList[i].style.float = 'left';
+					tabList[i].style.float = 'left';
+					tabList[i].style.padding = '0';
+					tabList[i].style.margin = '0';
+					tabList[i].style.verticalAlign = 'top';
+					tabList[i].style.display = 'table-cell';
+				}
+
+				for (var i = 0; i < tabLi.length; i++) {
+					tabLi[i].start = i;
+					tabLi[i].onclick = function () {
+						var star = this.start;
+						for (var i = 0; i < tabLi.length; i++) {
+							tabLi[i].className = '';
+						};
+						tabLi[star].className = 'active';
+						init.lineAnme(lineDiv, windowWidth / tabLi.length * star)
+						init.translate(tabBox, windowWidth, star);
+						endX = -star * windowWidth;
+					}
+				}
+
+				function OnTab(star) {
+					if (star < 0) {
+						star = 0;
+					} else if (star >= tabLi.length) {
+						star = tabLi.length - 1
+					}
+					for (var i = 0; i < tabLi.length; i++) {
+						tabLi[i].className = '';
+					};
+
+					tabLi[star].className = 'active';
+					init.translate(tabBox, windowWidth, star);
+					endX = -star * windowWidth;
+				};
+
+				tabBox.addEventListener('touchstart', chstart, false);
+				tabBox.addEventListener('touchmove', chmove, false);
+				tabBox.addEventListener('touchend', chend, false);
+				//按下
+				function chstart(ev) {
+					ev.preventDefault;
+					var touch = ev.touches[0];
+					tar = touch.pageX;
+					tabBox.style.webkitTransition = 'all 0s ease-in-out';
+					tabBox.style.transition = 'all 0s ease-in-out';
+				};
+				//滑动
+				function chmove(ev) {
+					var stars = wrap.querySelector('.active').start;
+					ev.preventDefault;
+					var touch = ev.touches[0];
+					var distance = touch.pageX - tar;
+					dist = distance;
+					init.touchs(tabBox, windowWidth, tar, distance, endX);
+					init.lineAnme(lineDiv, -dist / tabLi.length - endX / 4);
+				};
+				//离开
+				function chend(ev) {
+					var str = tabBox.style.transform;
+					var strs = JSON.stringify(str.split(",", 1));
+					endX = Number(strs.substr(14, strs.length - 18));
+
+					if (endX > 0) {
+						init.back(tabBox, windowWidth, tar, 0, 0, 0.3);
+						endX = 0
+					} else if (endX < -windowWidth * tabList.length + windowWidth) {
+						endX = -windowWidth * tabList.length + windowWidth
+						init.back(tabBox, windowWidth, tar, 0, endX, 0.3);
+					} else if (dist < -windowWidth / 3) {
+						OnTab(tabClick.querySelector('.active').start + 1);
+						init.back(tabBox, windowWidth, tar, 0, endX, 0.3);
+					} else if (dist > windowWidth / 3) {
+						OnTab(tabClick.querySelector('.active').start - 1);
+					} else {
+						OnTab(tabClick.querySelector('.active').start);
+					}
+					var stars = wrap.querySelector('.active').start;
+					init.lineAnme(lineDiv, stars * windowWidth / 3);
+					// init.lineAnme(lineDiv,stars*windowWidth/4);
+				};
+			};
+
+			var init = {
+				translate: function (obj, windowWidth, star) {
+					obj.style.webkitTransform = 'translate3d(' + -star * windowWidth + 'px,0,0)';
+					obj.style.transform = 'translate3d(' + -star * windowWidth + ',0,0)px';
+					obj.style.webkitTransition = 'all 0.3s ease-in-out';
+					obj.style.transition = 'all 0.3s ease-in-out';
+				},
+				touchs: function (obj, windowWidth, tar, distance, endX) {
+					obj.style.webkitTransform = 'translate3d(' + (distance + endX) + 'px,0,0)';
+					obj.style.transform = 'translate3d(' + (distance + endX) + ',0,0)px';
+				},
+				lineAnme: function (obj, stance) {
+					obj.style.webkitTransform = 'translate3d(' + stance + 'px,0,0)';
+					obj.style.transform = 'translate3d(' + stance + 'px,0,0)';
+					obj.style.webkitTransition = 'all 0.1s ease-in-out';
+					obj.style.transition = 'all 0.1s ease-in-out';
+				},
+				back: function (obj, windowWidth, tar, distance, endX, time) {
+					obj.style.webkitTransform = 'translate3d(' + (distance + endX) + 'px,0,0)';
+					obj.style.transform = 'translate3d(' + (distance + endX) + ',0,0)px';
+					obj.style.webkitTransition = 'all ' + time + 's ease-in-out';
+					obj.style.transition = 'all ' + time + 's ease-in-out';
+				},
+			}
+
+		</script>
 </body>
 
 </html>
