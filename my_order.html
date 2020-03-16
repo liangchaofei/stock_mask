@@ -139,7 +139,8 @@ color:#fff;
 				<div class="wp_left">等待买家付款</div>
                 <div class="wp_right">
                     ${!data[i].real_phone && !data[i].mail_addres ? '<p class="del">添加地址</p>':''}
-                    <p class="pay" data-id=${data[i].ID}>立即付款</p>
+                    <p id="deleteOrder" class="pay" data-id=${data[i].ID}>删除订单</p>
+                    <p class="pay" id="pay_btn" data-id=${data[i].ID}>立即付款</p>
 				</div>
 			</div>
         </div>
@@ -154,7 +155,26 @@ color:#fff;
                             $('.del').on('click',function(){
                                 window.open('address.html',"_self")
                             })
-                            $('.pay').on('click', function () {
+                            $('#deleteOrder').on('click',function(){
+                                $.ajax({
+                                    url:'https://mask.zhixiutec.com/api/delete_order',
+                                    type:'post',
+                                    data:JSON.stringify({ "id": parseInt($(this).attr('data-id')) }),
+                                    success:function(res){
+                                        if(res && res.error_code ===0){
+                                            $("#toast").text(res.data);
+                                            $("#toast").fadeIn().delay(1000).fadeOut();
+                                           setTimeout(() => {
+                                            window.location.reload()
+                                           }, 1000);
+                                        }else{
+                                            $("#toast").text(res.err_msg);
+                                            $("#toast").fadeIn().delay(1000).fadeOut();
+                                        }
+                                    }
+                                })
+                            })
+                            $('#pay_btn').on('click', function () {
                                 $.ajax({
                                     url: 'https://mask.zhixiutec.com/api/pay',
                                     type: 'post',
