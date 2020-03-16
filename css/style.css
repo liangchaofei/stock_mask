@@ -195,7 +195,7 @@ h1, h2, h3{font-family: "Microsoft Yahei",Arial, Helvetica, sans-serif;}
 .right-icon{font-size:16px; color:#739ae8; margin: 2px -3px 0 0; float:right;}
 .address{background:#eefaff url(../images/address.png) no-repeat 5px center; background-size: 30px; -webkit-background-size: 30px; padding:13px 40px; display:block; position:relative;}
 .address .right-icon{position:absolute; right:15px; top:50%; margin:-10px 0 0 0;}
-.control-num{width:120px; float:right; margin:0;}
+.control-num{ float:right; margin:0;}
 .control-num .btn{width:40px; border-color: #ccc; margin-top:-3px; font-size:16px; padding:4px 0;}
 .p-close{background:#8b8b8b; color:#fff; display:inline-block; width:30px; height:30px; line-height:23px; text-align:center; border-radius:4px; font-size: 34px;padding-top:3px;}
 .pay-point{line-height:50px; padding:0 10px;}

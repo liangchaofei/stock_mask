@@ -72,7 +72,7 @@
 							<!-- <a class="close p-close"
 								onclick="deleteShopCart('','艾吉贝2015新款多层收纳真皮单肩斜挎包女包头层牛皮斜跨小包包女','663','1358')"
 								href="javascript:void(0);">×</a> -->
-							<em class="price">¥160.00</em>
+							<!-- <em class="price">¥160.00</em> -->
 						</p>
 					</div>
 				</li>
@@ -85,7 +85,7 @@
 					<div class="btn-group btn-group-sm control-num">
 						<a onclick="disDe(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-minus gary"></span></a>
-						<input type="text" class="btn gary2 Amount" value="100" itemkey="" prodId="663" skuId="1358">
+						<input type="number" onchange="onfun(this)" style="width:10rem" id="count_val" class="btn gary2 Amount" value="100" itemkey="" prodId="663" skuId="1358">
 						<a onclick="increase(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-plus gary"></span></a>
 					</div>
@@ -99,7 +99,7 @@
 			</div>
 
 			<div class="l_message clearfix">
-				<p class="l_left">买家留言:</p>
+				<p class="l_left">买家留言</p>
 				<textarea class="l_right" name="" id="" cols="30" rows="10" placeholder="选填：对本次交易的说明"></textarea>
 			</div>
 		</div>
@@ -172,7 +172,10 @@
 
 			setTotal()
 		}
-
+		$("#count_val").bind("input propertychange",function(event){
+			console.log($("#count_val").val())
+			setTotal()
+		});
 		$('.icheck').on('click', function () {
 			if (!$('#buy-sele-all').is(':checked')) {
 				$(".totalPrice").text(0);
