@@ -31,7 +31,7 @@
         </header>
         <div id="order_box">
         </div>
-        <div class="total_goods">
+        <div class="total_goods" id="sec_wx" style="display: none;">
             ✅<span style="margin-left:0.1rem">微信安全认证</span>
         </div>
         <!--当没有商品时显示的样式-->
@@ -54,6 +54,9 @@
     $('.back').on('click',function(){
         window.open('userhome.html','_self')
     })
+    $('.stroll_btn').on('click',function(){
+        window.open('shopcart.html','_self')
+    })
     $.ajax({
         url: "https://mask.zhixiutec.com/api/user",
         success: function (res) {
@@ -69,6 +72,9 @@
                     success: function (val) {
                         if (val && val.error_code === 0) {
                             var data = val.data;
+                            if(data.length>0 ){
+                                $('#sec_wx').css("display","block")
+                            }
                             var str = '';
                             for (var i = 0; i < data.length; i++) {
                                 str += `

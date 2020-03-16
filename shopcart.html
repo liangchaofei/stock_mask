@@ -23,23 +23,22 @@
 	<script charset="utf-8" src="js/shopCart.js?v=01291"></script>
 	<title>购物车</title>
 	<style>
-		#toast
-	{
-	display:none;
-	position:fixed;
-	top:50%;
-	left:50%;
-	margin-top:-20px;
-	margin-left:-135px;
-	width:300px;
-	height:70px;
-	border-radius:10px;
-	background:#353535;
-	text-align:center;
-	font-size:1.4rem;
-	line-height:70px;
-	color:#fff;
-	}
+		#toast {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: -20px;
+			margin-left: -135px;
+			width: 300px;
+			height: 70px;
+			border-radius: 10px;
+			background: #353535;
+			text-align: center;
+			font-size: 1.4rem;
+			line-height: 70px;
+			color: #fff;
+		}
 	</style>
 </head>
 
@@ -104,7 +103,8 @@
 					<div class="btn-group btn-group-sm control-num">
 						<a onclick="disDe(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-minus gary"></span></a>
-						<input type="number" onchange="onfun(this)" style="width:10rem" id="count_val" class="btn gary2 Amount" value="100" itemkey="" prodId="663" skuId="1358">
+						<input type="number" onchange="onfun(this)" style="width:10rem" id="count_val"
+							class="btn gary2 Amount" value="100" itemkey="" prodId="663" skuId="1358">
 						<a onclick="increase(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-plus gary"></span></a>
 					</div>
@@ -191,8 +191,7 @@
 
 			setTotal()
 		}
-		$("#count_val").bind("input propertychange",function(event){
-			console.log($("#count_val").val())
+		$("#count_val").bind("input propertychange", function (event) {
 			setTotal()
 		});
 		$('.icheck').on('click', function () {
@@ -212,23 +211,23 @@
 					var data = res.data;
 					$('.inputDiv').text(data.mail_address)
 					$('.btn-buy').on('click', function () {
-						if(parseInt($(".totalPrice").text())<100){
+						if (parseInt($(".totalPrice").text()) < 100) {
 							alert('数量最少为100')
 							return false;
 						}
 						$.ajax({
 							url: 'https://mask.zhixiutec.com/api/create_order',
 							type: 'post',
-							data: JSON.stringify({ "count": parseInt($(".totalPrice").text()), content: $('.l_right').val() }),
+							data: JSON.stringify({ "count": parseInt($("#count_val").val()), content: $('.l_right').val() }),
 							success: function (res) {
 								if (res && res.error_code === 0) {
 									window.open('my_order.html', '_self')
 								} else {
 									$("#toast").text(`${res.err_msg},正在跳转中...`);
-								$("#toast").fadeIn().delay(1000).fadeOut();
-								setTimeout(function(){
-									window.open('my_order.html','_self')
-								},1000)
+									$("#toast").fadeIn().delay(1000).fadeOut();
+									setTimeout(function () {
+										window.open('my_order.html', '_self')
+									}, 1000)
 									return;
 								}
 							}
