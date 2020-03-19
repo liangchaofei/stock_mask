@@ -187,7 +187,6 @@ function handleUserPic(){
 	$.ajax({
 		url:'https://mask.zhixiutec.com/api/user',
 		success:function(res){
-			console.log('res',res)
 			var data =res.data;
 			if(res && res.error_code === 0){
 				$('.img-circle').attr('src',data.avatar)

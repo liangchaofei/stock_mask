@@ -60,7 +60,6 @@
     $.ajax({
         url: "https://mask.zhixiutec.com/api/user",
         success: function (res) {
-            console.log('res', res)
             if (res && res.error_code === 0) {
                 var data = res.data;
                 if(data.length>0 ){

@@ -10,7 +10,6 @@ $(function(){
     $.ajax({
         url:'https://mask.zhixiutec.com/api/user',
         success:function(res){
-            console.log('res',res)
             if(res && res.error_code=== 2){
                 var url = res.data;
                 window.open(url,'_self')
