@@ -283,11 +283,11 @@
 						
 						<li>
 							<label style="font-size: 0.6rem;">规格1</label>
-							<span class="price"><span class="price" id="prodCash">大于1w只发货价1.6元/只</span></span>
+							<span class="price"><span class="price" id="prodCash">大于1w只发货价<span class="smallPrice"></span>元/只</span></span>
 						</li>
 						<li>
 							<label style="font-size: 0.6rem;">规格2</label>
-							<span class="price"><span class="price" id="prodCash">少于1w只发货价1.7元/只</span></span>
+							<span class="price"><span class="price" id="prodCash">少于1w只发货价<span class="bigPrice"></span>元/只</span></span>
 						</li>
 					</ul>
 				</div>
@@ -475,7 +475,20 @@
 		</script>
 		<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
-		
+		<script>
+			$.ajax({
+						url:'https://mask.zhixiutec.com/api/price',
+						success:function(result){
+							if(result && result.error_code ===0){
+								var resultData = result.data;
+								bigPrice = resultData && resultData[0] && resultData[0].price;
+								smallPrice = resultData && resultData[1] && resultData[1].price;
+								$('.smallPrice').text(smallPrice/100)
+								$('.bigPrice').text(bigPrice/100)
+							}
+						}
+					})
+		</script>
 		<script charset="utf-8">
 			window.onload = function () {
 				var windowWidth = document.body.clientWidth; //window 宽度;

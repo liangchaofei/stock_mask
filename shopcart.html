@@ -75,12 +75,12 @@
 								马斯克(一次性卫生口罩)批发零售
 							</p>
 							<p class="p-title" style="height: 20px;">
-								小于1w只统一发货价<span class="bigCount">1.7</span>元/只
+								小于1w只统一发货价<span class="bigCount"></span>元/只
 							</p>
 							<p class="p-title" style="height: 20px;">
 								大于1w只统一发货价
-								<s><span class="bigCount">1.7</span></s>
-								<span style="color: red;" class="smallCount">1.6</span>
+								<s><span class="bigCount"></span></s>
+								<span style="color: red;" class="smallCount"></span>
 								元/只
 							</p>
 						</a>
@@ -98,7 +98,7 @@
 					<div class="pull-left mt5">
 						<span class="gary">小计：</span>
 						<span class="red">¥</span>
-						<span class="red productTotalPrice sumPrice">170</span>
+						<span class="red productTotalPrice sumPrice"></span>
 					</div>
 					<div class="btn-group btn-group-sm control-num">
 						<a onclick="disDe(this)" href="javascript:void(0);" class="btn btn-default"><span
@@ -134,7 +134,7 @@
 						<span class="mt10"></span>全选
 					</label>
 				</div>
-				<p>合计：<em class="red f22">¥<span class="totalPrice">170</span></em></p>
+				<p>合计：<em class="red f22">¥<span class="totalPrice"></span></em></p>
 			</div>
 			<div class="buy-btn-fix">
 				<a class="btn btn-danger btn-buy">生成订单</a>
@@ -168,7 +168,7 @@
 			var sum = 0;
 			var price = bigPrice;
 			var num = parseInt($('.Amount').val());
-			if (num > 0 && num < 20000) {
+			if (num > 0 && num < 10000) {
 				price = bigPrice;
 			} else {
 				price = smallPrice;
