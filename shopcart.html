@@ -168,18 +168,25 @@
 			var sum = 0;
 			var price = bigPrice;
 			var num = parseInt($('.Amount').val());
-			if(num == NaN){
-				$(".totalPrice").text(0);
-				$(".sumPrice").text(0);
-			}
+			// if(num == NaN){
+			// 	$(".totalPrice").text(0);
+			// 	$(".sumPrice").text(0);
+			// }
 			if (num > 0 && num < 10000) {
 				price = bigPrice;
 			} else {
 				price = smallPrice;
 			}
 			sum += num * price/100;
-			$(".totalPrice").text(sum.toFixed(2));
-			$(".sumPrice").text(sum.toFixed(2));
+			if(isNaN(num)){
+				
+				$(".totalPrice").text(0);
+				$(".sumPrice").text(0);
+			}else{
+				$(".totalPrice").text(sum.toFixed(2));
+				$(".sumPrice").text(sum.toFixed(2));
+			}
+			
 		}
 
 		function increase() {
