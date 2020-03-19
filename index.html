@@ -483,8 +483,8 @@
 								var resultData = result.data;
 								bigPrice = resultData && resultData[0] && resultData[0].price;
 								smallPrice = resultData && resultData[1] && resultData[1].price;
-								$('.smallPrice').text(smallPrice/100)
-								$('.bigPrice').text(bigPrice/100)
+								$('.smallPrice').text(bigPrice/100)
+								$('.bigPrice').text(smallPrice/100)
 							}
 						}
 					})
