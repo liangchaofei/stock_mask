@@ -35,7 +35,7 @@
 			border-radius: 10px;
 			background: #353535;
 			text-align: center;
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 			line-height: 70px;
 			color: #fff;
 		}
@@ -103,7 +103,7 @@
 					<div class="btn-group btn-group-sm control-num">
 						<a onclick="disDe(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-minus gary"></span></a>
-						<input type="number" onchange="onfun(this)" style="width:10rem;user-select:text !important;-webkit-user-select:text !important" id="count_val"
+						<input type="number" min="1" minlength="1" pattern="[0-9]*"  style="width:10rem;user-select:text !important;-webkit-user-select:text !important" id="count_val"
 							class="btn gary2 Amount" value="100" >
 						<a onclick="increase(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-plus gary"></span></a>
@@ -168,10 +168,10 @@
 			var sum = 0;
 			var price = bigPrice;
 			var num = parseInt($('.Amount').val());
-			if(num<100 || num === NaN){
-				$('.Amount').val(100)
+			if(num == NaN){
+				$(".totalPrice").text(0);
+				$(".sumPrice").text(0);
 			}
-			num = parseInt($('.Amount').val());
 			if (num > 0 && num < 10000) {
 				price = bigPrice;
 			} else {
@@ -224,14 +224,15 @@
 								smallPrice = resultData && resultData[1] && resultData[1].price;
 								$('.bigCount').text(bigPrice/100)
 								$('.smallCount').text(smallPrice/100)
-								$('.totalPrice').text(bigPrice)
-								$('.sumPrice').text(bigPrice)
+								$('.totalPrice').text(bigPrice || 0)
+								$('.sumPrice').text(bigPrice || 0)
 							}
 						}
 					})
 					$('.btn-buy').on('click', function () {
 						if (parseInt($(".totalPrice").text()) < 100) {
-							alert('数量最少为100')
+							$("#toast").text(`数量最少为100`);
+									$("#toast").fadeIn().delay(1000).fadeOut();
 							return false;
 						}
 						$.ajax({
