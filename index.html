@@ -260,7 +260,7 @@
 			</div>
 			<div class="row gary-bg" style="margin: 0;">
 				<div class="white-bg p10 details_con">
-					<h1 class="item-name" id="prodName">马斯克(一次性卫生口罩)批发零售, 大于1w只统一发货价1.7元/只,小于1w只统一发货价1.6元/只。厂家直销，假一赔十!
+					<h1 class="item-name" id="prodName">马斯克(一次性卫生口罩)批发零售, 大于1w只统一发货价<span class="smallPrice"></span>元/只,小于1w只统一发货价<span class="bigPrice"></span>元/只。厂家直销，假一赔十!
 					</h1>
 
 					<ul>
@@ -483,8 +483,8 @@
 								var resultData = result.data;
 								bigPrice = resultData && resultData[0] && resultData[0].price;
 								smallPrice = resultData && resultData[1] && resultData[1].price;
-								$('.smallPrice').text(bigPrice/100)
-								$('.bigPrice').text(smallPrice/100)
+								$('.smallPrice').text(smallPrice/100)
+								$('.bigPrice').text(bigPrice/100)
 							}
 						}
 					})
