@@ -168,6 +168,10 @@
 			var sum = 0;
 			var price = bigPrice;
 			var num = parseInt($('.Amount').val());
+			if(num<100 || num === NaN){
+				$('.Amount').val(100)
+			}
+			num = parseInt($('.Amount').val());
 			if (num > 0 && num < 10000) {
 				price = bigPrice;
 			} else {
