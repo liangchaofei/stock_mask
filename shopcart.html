@@ -113,8 +113,8 @@
 
 
 			<div class="ps_style clearfix">
-				<p class="ps_left">配送方式</p>
-				<p class="ps_right">快递&nbsp;<span>免邮</span></p>
+				<p class="ps_left">配送方式：<span>顺丰快递</span></p>
+				<p class="ps_right"><span>邮费：<span class="mail_spend"></span></span></p>
 			</div>
 
 			<div class="l_message clearfix">
@@ -150,10 +150,6 @@
 					<i class="navIcon home"></i>
 					<span class="text">首页</span>
 				</a>
-				<!-- <a href="shopcart.html" class="active">
-					<i class="navIcon shop"></i>
-					<span class="text">购物车</span>
-				</a> -->
 				<a href="userhome.html">
 					<i class="navIcon member"></i>
 					<span class="text">我的</span>
@@ -164,22 +160,29 @@
 	<div id="toast"></div>
 	<script type="text/javascript">
 			var smallPrice = 1.6, bigPrice = 1.7;
+			var num = parseInt($('.Amount').val());
+			if(num>0 && num<=100){
+			$('.mail_spend').text('50')
+			}else{
+				$('.mail_spend').text('0')
+			}
 		function setTotal() {
 			var sum = 0;
 			var price = bigPrice;
 			var num = parseInt($('.Amount').val());
-			// if(num == NaN){
-			// 	$(".totalPrice").text(0);
-			// 	$(".sumPrice").text(0);
-			// }
 			if (num > 0 && num < 10000) {
 				price = bigPrice;
 			} else {
 				price = smallPrice;
 			}
+
+			if(num>0 && num<=100){
+$('.mail_spend').text('50')
+			}else{
+				$('.mail_spend').text('0')
+			}
 			sum += num * price/100;
 			if(isNaN(num)){
-				
 				$(".totalPrice").text(0);
 				$(".sumPrice").text(0);
 			}else{
