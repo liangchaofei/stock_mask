@@ -104,7 +104,7 @@
 						<a onclick="disDe(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-minus gary"></span></a>
 						<input type="number" min="1" minlength="1" pattern="[0-9]*"  style="width:10rem;user-select:text !important;-webkit-user-select:text !important" id="count_val"
-							class="btn gary2 Amount" value="100" >
+							class="btn gary2 Amount" value="2000" >
 						<a onclick="increase(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-plus gary"></span></a>
 					</div>
@@ -201,8 +201,8 @@ $('.mail_spend').text('50')
 		function disDe() {
 			var t = $('.Amount');
 			t.val(parseInt(t.val()) - 1);
-			if (parseInt(t.val()) < 100) {
-				t.val(100);
+			if (parseInt(t.val()) < 2000) {
+				t.val(2000);
 			}
 
 			setTotal()
@@ -241,8 +241,8 @@ $('.mail_spend').text('50')
 						}
 					})
 					$('.btn-buy').on('click', function () {
-						if (parseInt($(".totalPrice").text()) < 100) {
-							$("#toast").text(`数量最少为100`);
+						if (parseInt($(".totalPrice").text()) < 2000) {
+							$("#toast").text(`数量最少为2000`);
 									$("#toast").fadeIn().delay(1000).fadeOut();
 							return false;
 						}
