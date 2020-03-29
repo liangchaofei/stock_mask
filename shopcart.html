@@ -235,13 +235,13 @@ $('.mail_spend').text('50')
 								smallPrice = resultData && resultData[1] && resultData[1].price;
 								$('.bigCount').text(bigPrice/100)
 								$('.smallCount').text(smallPrice/100)
-								$('.totalPrice').text(bigPrice || 0)
-								$('.sumPrice').text(bigPrice || 0)
+								$('.totalPrice').text((bigPrice/100*2000) || 0)
+								$('.sumPrice').text((bigPrice/100*2000)  || 0)
 							}
 						}
 					})
 					$('.btn-buy').on('click', function () {
-						if (parseInt($(".totalPrice").text()) < 2000) {
+						if (parseInt($(".totalPrice").text()) <= 2000) {
 							$("#toast").text(`数量最少为2000`);
 									$("#toast").fadeIn().delay(1000).fadeOut();
 							return false;
