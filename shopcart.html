@@ -104,7 +104,7 @@
 						<a onclick="disDe(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-minus gary"></span></a>
 						<input type="number" min="1" minlength="1" pattern="[0-9]*"  style="width:10rem;user-select:text !important;-webkit-user-select:text !important" id="count_val"
-							class="btn gary2 Amount" value="2000" >
+							class="btn gary2 Amount" value="500" >
 						<a onclick="increase(this)" href="javascript:void(0);" class="btn btn-default"><span
 								class="glyphicon glyphicon-plus gary"></span></a>
 					</div>
@@ -116,7 +116,7 @@
 				<p class="ps_left">配送方式：<span>顺丰快递</span></p>
 			</div>
 			<div class="l_message clearfix" style="margin-bottom:10px">
-				<p class="ps_left"><span>邮费：<span class="mail_spend"></span>&nbsp;<span style="font-size: 1.2rem;">(大于4000只免邮)</span></span></p>
+				<p class="ps_left"><span>邮费：<span class="mail_spend"></span>&nbsp;<span style="font-size: 1.2rem;">(大于2000只免邮)</span></span></p>
 			</div>
 			<div class="l_message clearfix">
 				<p class="l_left">买家留言</p>
@@ -198,11 +198,12 @@ $('.mail_spend').text('50')
 			t.val(parseInt(t.val()) + 1);
 			setTotal()
 		}
+		var initCount = 500;
 		function disDe() {
 			var t = $('.Amount');
 			t.val(parseInt(t.val()) - 1);
-			if (parseInt(t.val()) < 2000) {
-				t.val(2000);
+			if (parseInt(t.val()) < initCount) {
+				t.val(initCount);
 			}
 
 			setTotal()
@@ -220,7 +221,7 @@ $('.mail_spend').text('50')
 			}
 		})
 
-
+	
 		$.ajax({
 			url: 'https://mask.zhixiutec.com/api/user',
 			success: function (res) {
@@ -235,14 +236,14 @@ $('.mail_spend').text('50')
 								smallPrice = resultData && resultData[1] && resultData[1].price;
 								$('.bigCount').text(bigPrice/100)
 								$('.smallCount').text(smallPrice/100)
-								$('.totalPrice').text((bigPrice/100*2000) || 0)
-								$('.sumPrice').text((bigPrice/100*2000)  || 0)
+								$('.totalPrice').text((bigPrice/100*initCount) || 0)
+								$('.sumPrice').text((bigPrice/100*initCount)  || 0)
 							}
 						}
 					})
 					$('.btn-buy').on('click', function () {
-						if (parseInt($(".totalPrice").text()) <= 2000) {
-							$("#toast").text(`数量最少为2000`);
+						if (parseInt($(".totalPrice").text()) <= initCount) {
+							$("#toast").text(`数量最少为${initCount}`);
 									$("#toast").fadeIn().delay(1000).fadeOut();
 							return false;
 						}
