@@ -116,7 +116,7 @@
 				<p class="ps_left">配送方式：<span>顺丰快递</span></p>
 			</div>
 			<div class="l_message clearfix" style="margin-bottom:10px">
-				<p class="ps_left"><span>邮费：<span class="mail_spend"></span>&nbsp;<span style="font-size: 1.2rem;">(大于2000只免邮)</span></span></p>
+				<p class="ps_left"><span>邮费：<span class="mail_spend"></span>&nbsp;<span style="font-size: 1.2rem;">(大于4000只免邮)</span></span></p>
 			</div>
 			<div class="l_message clearfix">
 				<p class="l_left">买家留言</p>
@@ -162,7 +162,7 @@
 	<script type="text/javascript">
 			var smallPrice = 1.6, bigPrice = 1.7;
 			var num = parseInt($('.Amount').val());
-			if(num>0 && num<=2000){
+			if(num>0 && num<=4000){
 			$('.mail_spend').text('50')
 			}else{
 				$('.mail_spend').text('0')
@@ -177,7 +177,7 @@
 				price = smallPrice;
 			}
 
-			if(num>0 && num<=2000){
+			if(num>0 && num<=4000){
 $('.mail_spend').text('50')
 			}else{
 				$('.mail_spend').text('0')
